@@ -16,7 +16,7 @@ function Home() {
           'https://api.themoviedb.org/3/movie/popular',
           {
             params: {
-              api_key: 'TA_CLE_API_ICI',  // Remplace par ta clé API TMDb
+              api_key: '3669e21709e6fe6ad7f4bc059ab8f881',  // Remplace par ta clé API TMDb
               language: 'fr-FR',
               page: 1,
             },
