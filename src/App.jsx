@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   return (
-    <HashRouter basename="/film-app">
+    <HashRouter>
       <nav className="p-4 bg-gray-200 flex gap-4">
         <Link to="/">Accueil</Link>
         <Link to="/search">Recherche</Link>
