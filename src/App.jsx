@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter , Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter , Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import AddMovie from './pages/AddMovie';
@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <nav className="p-4 bg-gray-200 flex gap-4">
-        <Link to="/">Accueil</Link>
+        <Link to="/film-app">Accueil</Link>
         <Link to="/search">Recherche</Link>
         <Link to="/add">Ajouter un film</Link>
       </nav>
