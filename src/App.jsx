@@ -8,9 +8,9 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/film-app">
       <nav className="p-4 bg-gray-200 flex gap-4">
-        <Link to="/film-app">Accueil</Link>
+        <Link to="/">Accueil</Link>
         <Link to="/search">Recherche</Link>
         <Link to="/add">Ajouter un film</Link>
       </nav>
