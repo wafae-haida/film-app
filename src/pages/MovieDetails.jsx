@@ -1,29 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import { useParams, useLocation, Link } from "react-router-dom";
 
-function MovieDetails() {
+export default function MovieDetails() {
   const { id } = useParams();
-  const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const movie = location.state?.movie;
 
-  useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
-      params: { api_key: 'VOTRE_API_KEY', language: 'fr-FR' }
-    }).then(response => {
-      setMovie(response.data);
-    });
-  }, [id]);
+  // Si pas de state, tu peux appeler une API ici pour récupérer les détails par id.
 
-  if (!movie) return <p>Chargement...</p>;
+  if (!movie) {
+    return (
+      <div>
+        <p>Film non trouvé.</p>
+        <Link to="/">Retour à l'accueil</Link>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
-      <p>Date de sortie : {movie.release_date}</p>
-      <p>Note : {movie.vote_average}</p>
+    <div >
+      <div className="text-center">
+        <h1>{movie.title}</h1>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <h4>Note moyenne :⭐ {movie.vote_average} / 10</h4>
+        <h4>Date de sortie : {movie.release_date}</h4>
+      </div>
+      <p>{movie.overview || "Pas de description disponible."}</p>
+      <br />
     </div>
   );
 }
-
-export default MovieDetails;

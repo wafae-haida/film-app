@@ -9,25 +9,26 @@ import './App.css'
 function App() {
   return (
     <HashRouter>
-
-      <nav className="text-center">
-        <div className="inline-grid grid-cols-3 gap-x-4 ">
-            <Link to="/" className=" no-underline ">Accueil</Link>
-            <Link to="/search" className=" no-underline">
-              Recherche
-            </Link>
-            <Link to="/add" className=" no-underline">
-              Ajouter un film
-            </Link>
-        </div>
-      </nav>
-      <br />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/add" element={<AddMovie />} />
-        <Route path="/movie/:id" element={<MovieDetails />} />
-      </Routes>
+      <div  className="app-container">
+        <nav className="text-center">
+          <div className="inline-grid grid-cols-3 gap-x-4 ">
+              <Link to="/" className=" no-underline ">Accueil</Link>
+              <Link to="/search" className=" no-underline">
+                Recherche
+              </Link>
+              <Link to="/add" className=" no-underline">
+                Ajouter un film
+              </Link>
+          </div>
+        </nav>
+        <br />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/add" element={<AddMovie />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
+      </div>
     </HashRouter>
   );
 }

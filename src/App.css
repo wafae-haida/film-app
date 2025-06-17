@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.app-container {
+  background-color: #dbeafe; /* Bleu clair élégant */
+  min-height: 100vh;
+  color: #1e3a8a; /* Bleu foncé pour le texte */
+  padding: 1rem;
+}
