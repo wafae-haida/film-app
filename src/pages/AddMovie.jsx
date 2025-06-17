@@ -14,7 +14,7 @@ function AddMovie() {
 
   return (
     <form onSubmit={handleAdd}>
-      <h1>Ajouter un film</h1>
+      <h1 className="text-center">Ajouter un film</h1>
       <input 
         type="text" 
         value={title} 

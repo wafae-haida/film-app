@@ -19,7 +19,7 @@ function Search() {
 
   return (
     <div>
-      <h1>Recherche de films</h1>
+      <h1 className="text-center">Recherche de films</h1>
       <input 
         type="text" 
         value={query} 

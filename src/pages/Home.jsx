@@ -37,18 +37,36 @@ function Home() {
   if (loading) return <p>Chargement des films...</p>;
   if (error) return <p>{error}</p>;
 
-  return (
-    <div className="movie-list">
-      {movies.map((movie) => (
-        <div key={movie.id} className="movie-card" style={{ marginBottom: '20px' }}>
-          <h2>{movie.title}</h2>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <p>Note : {movie.vote_average} / 10</p>
-        </div>
-      ))}
+ return (
+    <div className="" >
+
+      <h1 className="text-center">
+        🎬 Films Populaires
+      </h1>
+      <br />
+      <div className="grid grid-cols-3 ">
+        {movies.map((movie) => (
+          <div key={movie.id} className="">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              className="w-full"
+            />
+            <div>
+              <h2 className="">{movie.title}</h2>
+              <p className="line-clamp-3">
+                {movie.overview || "Pas de description disponible."}
+              </p>
+              <div className="">
+                ⭐ {movie.vote_average} / 10
+              </div>
+              <br/>
+              <br/>
+              <br/>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
